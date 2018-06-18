@@ -10,9 +10,67 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2018_06_18_134230) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "bbsitters", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "language"
+    t.integer "price"
+    t.integer "age"
+    t.string "city"
+    t.text "description"
+    t.string "photo"
+    t.integer "experience"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_bbsitters_on_user_id"
+  end
+
+  create_table "parents", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "age_of_kid"
+    t.string "name_of_kid"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_parents_on_user_id"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.string "reservation_date"
+    t.boolean "status", default: false
+    t.bigint "parent_id"
+    t.bigint "bbsitter_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bbsitter_id"], name: "index_reservations_on_bbsitter_id"
+    t.index ["parent_id"], name: "index_reservations_on_parent_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet "current_sign_in_ip"
+    t.inet "last_sign_in_ip"
+    t.boolean "is_parent", default: true
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  add_foreign_key "bbsitters", "users"
+  add_foreign_key "parents", "users"
+  add_foreign_key "reservations", "bbsitters"
+  add_foreign_key "reservations", "parents"
 end
