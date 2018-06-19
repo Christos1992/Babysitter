@@ -1,0 +1,28 @@
+<h1>Hello make your profile</h1>
+
+
+<%= simple_form_for(@bbsitter) do |f| %>
+<div class="form-inputs">
+<%= f.input :first_name %>
+
+<%= f.input :last_name %>
+
+<%= f.input :language %>
+
+<%= f.input :price %>
+
+<%= f.input :city %>
+
+<%= f.input :description %>
+
+<%= f.input :photo %>
+
+<%= f.input :experience %>
+
+</div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Update" %>
+  </div>
+<% end %>
+

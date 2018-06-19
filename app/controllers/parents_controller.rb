@@ -1,7 +1,7 @@
 class ParentsController < ApplicationController
  before_action :find_id, only: [:show, :edit, :update, :destroy]
   def edit
-    
+
   end
 
   def show
