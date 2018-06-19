@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
+
+  devise_for :users, controllers: { registrations: "registrations" }
   root to: 'pages#home'
   resources :parents, only:[:edit, :show, :update, :destroy]
   resources :bbsitters, only:[:edit, :show, :update, :destroy]

@@ -23,6 +23,8 @@ class BbsittersController < ApplicationController
 
   end
 
+  private
+
   def bbsitters_params
    params.require(:bbsitter).permit(:first_name, :last_name, :age, :language, :price, :city, :description, :photo, :experience, :user_id)
   end
