@@ -1,1 +1,16 @@
-<h1>Welcome parent make your account</h1>
+<h1>Welcome! Create your profil</h1>
+<%= simple_form_for(@parent) do |f| %>
+<%= f.error_notification %>
+
+<div class="form-inputs">
+	<%= f.input :first_name, required: true %>
+	<%= f.input :last_name, required: true %>
+	<%= f.input :name_of_kid, required: true %>
+	<%= f.input :age_of_kid, required: true %>
+</div>
+
+
+<div class="form-actions">
+	<%= f.button :submit, "Update" %>
+</div>
+<% end %>
