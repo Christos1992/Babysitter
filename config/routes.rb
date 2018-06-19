@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :parents, only:[:edit, :show, :update, :destroy]
   resources :bbsitters, only:[:edit, :show, :update, :destroy]
+  resources :pages, only:[:show, :index]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

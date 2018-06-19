@@ -1,0 +1,23 @@
+<h1> <%= @city %></h1>
+
+<div class="container">
+  <div class="row">
+  <div class="row">
+    <% @bbsitters.each do |bbsitter| %>
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="card">
+          <div class= "card-description">
+            <h2> <%= bbsitter.first_name %></h2>
+          </div>
+          <%= link_to "Talk to #{bbsitter.first_name}", bbsitter_path(bbsitter), class: 'card-link' %>
+        </div>
+        <%= bbsitter.first_name %>
+        <%= bbsitter.last_name %>
+        <%= bbsitter.price %>
+        <%= bbsitter.language %>
+
+      </div>
+    <% end %>
+  </div>
+  </div>
+</div>

@@ -2,9 +2,14 @@
   <div class="banner-content">
     <h1>Find Your Dream Babysitter</h1>
      <div class= "form-inline-home">
-
-      <input type="search" class="inputsearch" placeholder=" Enter a city...">
-      <button class="btn btn-primary"> Search </button>
+     <!--    <form action="/pages" method="get">
+             <input name="city" type="search" class="inputsearch" placeholder=" Enter a city..." >
+             <button type="submit" >Find</button>
+           </form> -->
+      <%= form_tag pages_path, method: :get do %>
+        <input name="city" type="search" class="inputsearch" placeholder=" Enter a city..." >
+        <%= submit_tag 'Save' %>
+      <% end %>
 
     </div>
   </div>
