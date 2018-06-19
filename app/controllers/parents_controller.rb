@@ -1,7 +1,7 @@
 class ParentsController < ApplicationController
 
   def edit
-    
+
   end
 
   def show
