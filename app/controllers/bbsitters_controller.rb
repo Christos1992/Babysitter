@@ -1,22 +1,14 @@
 class BbsittersController < ApplicationController
   before_action :find_id, only: [:show, :edit, :update, :destroy]
 
-  def create
-  end
-
   def edit
-
 
   end
 
   def update
     @bbsitter.update(bbsitters_params)
     redirect_to bbsitter_path(@bbsitter)
-  end
-
-  def destroy
-    @bbsitter.destroy
-    redirect_to bbsitters_path
+    authorize @bbsitter
   end
 
   def show
@@ -31,6 +23,8 @@ class BbsittersController < ApplicationController
 
   def find_id
    @bbsitter = Bbsitter.find(params[:id])
+   authorize @bbsitter
   end
+
 
 end

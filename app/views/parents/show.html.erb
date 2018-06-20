@@ -6,3 +6,8 @@
 	<li><%=@parent.name_of_kid%></li>
 	<li><%=@parent.age_of_kid%></li>
 </ul>
+
+
+<% if policy(@parent).update? %>
+  <%= link_to 'Edit Your Profile', edit_parent_path(@parent) %>
+<% end %>

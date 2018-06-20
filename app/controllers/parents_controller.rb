@@ -10,6 +10,7 @@ class ParentsController < ApplicationController
   def update
     @parent.update(parents_params)
     redirect_to parent_path(@parent)
+    authorize @parent
   end
 
   def destroy
@@ -17,13 +18,14 @@ class ParentsController < ApplicationController
     redirect_to parents_path
   end
 
-  private 
+  private
   def parents_params
   	params.require(:parent).permit(:first_name, :last_name, :name_of_kid, :age_of_kid)
   end
 
   def find_id
   	@parent =Parent.find(params[:id])
+    authorize @parent
   end
 
 end
