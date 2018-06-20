@@ -1,0 +1,31 @@
+<div class=”ui segment”>
+ <h3>Mailbox</h3>
+
+ <div class=”ui list”>
+  <div class=”item”>
+   <% @conversations.each do |conversation| %>
+   <% if conversation.parent_id == current_user.id ||      conversation.bbsitter_id == current_user.id %>
+    <% if conversation.parent_id == current_user.id %>
+      <% bbsitter = User.find(conversation.bbsitter_id) %>
+    <% else %>
+      <% bbsitter = User.find(conversation.parent_id) %>
+    <% end %>
+    <%= link_to bbsitter.first_name,   conversation_messages_path(conversation)%>
+   <% end %>
+  <% end %>
+  </div>
+ </div>
+</div>
+
+<div class=”ui segment”>
+ <h3>All Users</h3>
+  <div class=”ui list”>
+   <% @users.each do |user| %>
+    <% if user.id != current_user.id %>
+     <div class=”item”>
+   <%= user.first_name %> <%= link_to ‘Message me!’, conversations_path(parent_id: current_user.id, bbsitter_id: user.id), method: ‘post’%>
+ </div>
+  <% end %>
+ <% end %>
+ </div>
+</div>
