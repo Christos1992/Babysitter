@@ -14,8 +14,15 @@
 <p><%= @bbsitter.experience %></p>
 <ul>
 </ul>
+
+
+<% if policy(@bbsitter).update? %>
+  <%= link_to 'Edit Your Profile', edit_bbsitter_path(@bbsitter) %>
+<% end %>
+=======
 </div>
 </div>
 </div>
 </div>
 </div>
+
