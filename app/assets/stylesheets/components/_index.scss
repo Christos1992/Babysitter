@@ -2,3 +2,20 @@
 @import "alert";
 @import "navbar";
 @import "banner";
+@import "card";
+
+h1{
+  text-align: center;
+  margin-top: 100px;
+
+
+}
+
+.wrapper {
+  height: 100vh;
+  background-size: cover !important;
+}
+
+.container {
+
+}

@@ -1,5 +1,5 @@
 <div class="wrapper" style="margin-top: -70px;">
-<div id="" class="container" align-items>
+<div id="" class="container" align-items
   <div class="col-xs-offset-2 col-xs-8 col-md-offset-2  col-md-8">
     <div class="cards">
       <div id="name-pic" class="card">
@@ -11,18 +11,24 @@
 <div id="conditions" class="card">
 <h4> <strong>Price per hour: <%= @bbsitter.price%> </strong></h4>
 <h4><strong>Experience in years: <%= @bbsitter.experience %></strong></h4>
+ </div>
+
+  <div class="row">
+        <div id="profile-info" class="card">
+        <h4>First name: <%= @bbsitter.first_name %></h4>
+        <h4>Last name: <%= @bbsitter.last_name %></h4>
+        <h4>Age: <%= @bbsitter.age %></h4>
+        <h4>City: <%= @bbsitter.city %></h4>
+        <h4>Description: </h4>
+         <p> <%= @bbsitter.description %></p>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div id="profile-info" class="card">
-<h4>First name: <%= @bbsitter.first_name %></h4>
-<h4>Last name: <%= @bbsitter.last_name %></h4>
-<h4>Age: <%= @bbsitter.age %></h4>
-<h4>City: <%= @bbsitter.city %></h4>
-<h4>Description: </h4>
-  <p> <%= @bbsitter.description %></p>
-</div>
-</div>
-</div>
-</div>
-</div>
+<% if policy(@bbsitter).update? %>
+  <%= link_to 'Edit Your Profile', edit_bbsitter_path(@bbsitter) %>
+  <% end %>
+    
+
 
