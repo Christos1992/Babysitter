@@ -15,8 +15,10 @@
             <h2> <%= bbsitter.first_name %></h2>
             <p> <%= bbsitter.last_name %></p>
             </div>
+
             <div class= "card-language">
             <h2> <%= bbsitter.language %></h2>
+            <p><%= link_to "Make a reservation", new_bbsitter_reservation_path(bbsitter), class: 'card-link' %></p>
             <p><%= link_to "Talk to #{bbsitter.first_name}", bbsitter_path(bbsitter), class: 'card-link' %></p>
           </div>
 

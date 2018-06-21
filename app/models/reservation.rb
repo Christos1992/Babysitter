@@ -1,5 +1,5 @@
 class Reservation < ApplicationRecord
-  belongs_to :parents
-  belongs_to :bbsitters
+  belongs_to :parent
+  belongs_to :bbsitter
 
 end
