@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_one :parent,  dependent: :destroy
   has_one :bbsitter, dependent: :destroy
+  has_many :reservations
   def render_what_i_am
      if self.is_parent
         Parent.create!( user: self ) if self.parent.nil?

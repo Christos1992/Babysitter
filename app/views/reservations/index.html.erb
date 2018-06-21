@@ -1,0 +1,26 @@
+<h1>all reservation</h1>
+
+
+<div class="container">
+   <div class="text-center">
+  <div class="row">
+    <% @reservations.each do |reservation| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="cards">
+           <div class= "card-language">
+            <h2> <%= reservation.id %></h2>
+            <% if current_user.is_parent? %>
+            <p><%= link_to "go to this reservation", parent_reservation_path(reservation.parent, reservation), class: 'card-link' %></p>
+            <% else %>
+            <p><%= link_to "go to this reservation", bbsitter_reservation_path(reservation.bbsitter,reservation), class: 'card-link' %></p>
+            <% end %>
+          </div>
+
+        </div>
+
+      </div>
+    <% end %>
+  </div>
+  </div>
+</div>
+</div>
