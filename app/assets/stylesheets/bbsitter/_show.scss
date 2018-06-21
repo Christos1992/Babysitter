@@ -1,3 +1,73 @@
-#profile-card {
+
+#profile-info {
+  background-color: rgba(255, 249, 192, 0.5);
+  background-color: rgba(255, 249, 192, 0.5);
+  display: center;
+  display-items: center;
+  margin-top: 20px;
+  vertical-align: middle;
+  background-color: rgba(255, 249, 192, 0.25);
+  width: 700px;
+  border-radius: 4px;
+  align-items: stretch;
+  border: solid 0.1px;
+
 
 }
+
+#photo {
+  width: 400;       /* Set the width */
+  margin: 0 20%;
+  padding: 10px;
+}
+
+#price {
+  text-align: center;
+}
+
+#conditions {
+  margin-top: 10px;
+  background-color: rgba(255, 249, 192, 0.5);
+  background-color: rgba(255, 249, 192, 0.5);
+  display: center;
+  display-items: center;
+  margin-top: 20px;
+  vertical-align: middle;
+  background-color: rgba(255, 249, 192, 0.25);
+  //opacity: 0.8;
+  width: 700px;
+  height: 100px;
+  border-radius: 4px;
+  align-items: stretch;
+  border: solid 0.1px;
+}
+
+#name-pic {
+  background-color: rgba(255, 249, 192, 0.5);
+  display: center;
+  display-items: center;
+  margin-top: 100px;
+  vertical-align: middle;
+  background-color: rgba(255, 249, 192, 0.25);
+  //opacity: 0.8;
+  width: 700px;
+  height: 600px;
+  border-radius: 4px;
+  border: solid 0.1px;
+
+  h2 {
+    margin-left: 200px;
+  }
+
+}
+
+.card {
+  h4 {
+    margin-left: 15px;
+  }
+  p{
+    margin-left: 15px
+  }
+}
+
+
