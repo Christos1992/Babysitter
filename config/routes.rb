@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { registrations: "registrations" }
 
+
   resources :parents, only:[:edit, :show, :update, :destroy] do
     resources :reservations, only:[:show, :index]
   end
@@ -12,7 +13,10 @@ Rails.application.routes.draw do
   end
   resources :pages, only:[:show, :index]
 
-  resources :reservations
+  resources :reservations do
+     resources :messages, only: [:create]
+  end
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

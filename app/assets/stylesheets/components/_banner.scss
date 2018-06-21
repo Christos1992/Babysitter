@@ -6,21 +6,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.banner h1 {
-  margin-top: -180px;
-  font-size: 50px;
-  font-weight: bold;
-  text-shadow: 3px 1px rgba(0, 0, 0, 0.2);
-}
-.banner p {
-  font-size: 25px;
-  font-weight: lighter;
-  color: rgb(255, 255, 255);
-  opacity: 0.6;
-  margin-bottom: 30px;
+ }
+// .banner h1 {
+//   margin-top: -180px;
+//   font-size: 50px;
+//   font-weight: bold;
+//   text-shadow: 3px 1px rgba(0, 0, 0, 0.2);
+// }
+// .banner p {
+//   font-size: 25px;
+//   font-weight: lighter;
+//   color: rgb(255, 255, 255);
+//   opacity: 0.6;
+//   margin-bottom: 30px;
 
-}
+// }
 
 .form-inline-home{
     display: flex;
@@ -38,3 +38,18 @@
   margin-left: -4px;
 
 }
+
+h1 {
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-size: 47px;
+
+  text-align: center;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+
+  &.elegantshadow {
+    color: #131313;
+    background-color: transparent;
+    letter-spacing: .15em;
+}
+  }
