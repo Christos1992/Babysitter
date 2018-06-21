@@ -1,18 +1,30 @@
+#nophoto {
+  border-radius:10px
 
+ }
 .cards {
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://i.stack.imgur.com/WmvM0.png');
-  height: 100vh;
+
   background-size: 300px 285px;
   background-repeat: no-repeat;
   margin-top:50px;
-  height: 375px;
+  height: 325px;
   width: 300px;
-  text-shadow: 0 1px 1px rgba(0,0,0,1);
+  text-shadow: 3 3px 2px rgba(0,0,0,1);
   background-color: white;
-  color: white;
+  color: #999999;
   position: relative;
-  border-radius: 5px;
+  border-radius:10px;
   opacity: 0.9;
+  box-shadow: 1px 2px 4px -1px rgba(0, 0, 0, 0.7)
+}
+
+  #photoindex {
+  border-radius:10px;
+  height: 225px;
+  width: 300px;
+
+
+
 
 }
 .card-user {
@@ -24,10 +36,19 @@
 }
 .card-category {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: -70px;
+  left: -36px;
   font-size: 15px;
   text-transform: uppercase;
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-size: 20px;
+  padding: 80px 50px;
+  text-align: center;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+    color: #131313;
+    background-color: transparent;
+    letter-spacing: .15em;
 }
 .card-description {
   position: absolute;
@@ -35,37 +56,79 @@
   left: 0px;
 }
 .card-language {
-  position: absolute;
+  position: relative;
   bottom: -6px;
   right: -10px;
 
+
 }
 .card-language h2 {
-  font-size: 20px;
-
+  position: relative;
+  font-size: 10px;
+  bottom: 53.5px;
+  left: 63px;
+ font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  padding: 80px 50px;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+  color: #131313;
+  background-color: transparent;
+  letter-spacing: .10em;
 }
 
 .card-description h2 {
-  font-size: 20px;
-  margin-bottom: -13.5px;
-  margin-left: -2px;
-  padding-top: 15px;
-  text-align: left;
-}
+      position: relative;
+    font-size: 20px;
+    bottom: -222.5px;
+    margin-left: -33px;
+    padding-top: 15px;
+    text-align: left;
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    font-size: 15px;
+    padding: 80px 50px;
+    text-align: left;
+    text-transform: uppercase;
+    text-rendering: optimizeLegibility;
+    color: #131313;
+    background-color: transparent;
+    letter-spacing: .15em;
+  }
+
 .card-description p {
+  position: relative;
   font-size: 20px;
   opacity: 0.7;
-  font-weight: lighter;
   text-align: left;
-  margin-left: 17px;
-}
+  left: -34px;
+  bottom: -53px;
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-size: 15px;
+  padding: 80px 50px;
+  text-align: center;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+  color: #131313;
+  background-color: transparent;
+  letter-spacing: .15em;
+  }
+
 .card-link {
   position: relative;
-  bottom: 0;
-  right: -12px;
+  bottom: 151px;
+  right: -75px;
   z-index: 2;
   opacity: 1;
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-size: 10px;
+  padding: 80px 50px;
+  text-align: right;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+  color: #131313;
+  background-color: transparent;
+  letter-spacing: .10em;
 }
+
 .card-link:hover {
   opacity: 0.8;
   text-decoration:none;
