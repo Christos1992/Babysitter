@@ -11,3 +11,7 @@
 <% if policy(@parent).update? %>
   <%= link_to 'Edit Your Profile', edit_parent_path(@parent) %>
 <% end %>
+
+
+  <%= link_to 'All your reservations', parent_reservations_path(@parent) %>
+

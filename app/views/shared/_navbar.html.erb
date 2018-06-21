@@ -19,10 +19,9 @@
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <% if current_user.is_parent %>
-                <%#= link_to parent_reservations_path(current_user.parent) do %>
-                  <!-- <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %> -->
-                  <%# end %>
-                  <%= link_to "Reservations", parent_reservations_path(current_user.parent) , class: "navbar-wagon-item navbar-wagon-link" %>
+                <%= link_to parent_path(current_user.parent) do %>
+                  <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+                  <% end %>
               <% else %>
                 <%= link_to bbsitter_path(current_user.bbsitter) do %>
                 <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>

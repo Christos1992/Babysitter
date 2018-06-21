@@ -1,42 +1,63 @@
 class ReservationsController < ApplicationController
- 
+
+  before_action :find_id, only: [:show, :edit, :update, :destroy]
+
+
 
   def new
- 	@reservation = Reservation.new
-  end
-
-  def index
-  	raise
-    @reservations = Reservation.all
+    @reservation = Reservation.new
+    @bbsitter = Bbsitter.find(params[:bbsitter_id])
+     @parent = current_user.parent
+    authorize @reservation
   end
 
   def create
- 	@reservation = Reservation.new(reservation_params)
-    @reservation.save
-    redirect_to reservation_path(@reservation) 
+     @reservation = Reservation.new(reservation_params)
+     @reservation.bbsitter = Bbsitter.find(params[:bbsitter_id])
+
+     @reservation.parent = Parent.find(current_user.parent.id)
+    authorize @reservation
+
+    if @reservation.save
+      redirect_to reservation_path(@reservation)
+    else
+      render 'new'
+    end
+  end
+
+  def show
+  end
+
+  def index
+
+
+    @reservations = policy_scope(Reservation)
+
+
+
+  end
+
+  def edit
   end
 
   def update
-  	set_reservation
-	@reservation.update(reservation_params)
-    redirect_to reservations_path(@reservation)
+    @reservation.update(reservations_params)
+    redirect_to reservation_path(@reservation)
   end
 
   def destroy
-  	set_reservation
-	@reservation.destroy
-	redirect_to reservations_path
+      @reservation = Reservation.find(params[:id])
+    @reservation.destroy
+    redirect_to reservations_path
   end
 
-private
+   private
+  def reservation_params
+    params.require(:reservation).permit(:reservation_date, :status)
+  end
 
-def set_reservation
-
-	@reservation = Reservation.find(params[:id])
-end
-
-def reservation_params
-	params.require(:reservation).permit()
-end
-
+  def find_id
+    @reservation = Reservation.find(params[:id])
+    authorize @reservation
+  end
 end

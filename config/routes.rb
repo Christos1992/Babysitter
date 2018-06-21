@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-devise_for :users, controllers: { registrations: "registrations" }
+
+  devise_for :users, controllers: { registrations: "registrations" }
+
   resources :parents, only:[:edit, :show, :update, :destroy] do
     resources :reservations, only:[:show, :index]
   end
@@ -14,8 +16,6 @@ devise_for :users, controllers: { registrations: "registrations" }
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-
-
   authenticated :user do
     root to: 'pages#home', as: :root #-> if user is logged in
   end
@@ -24,5 +24,3 @@ devise_for :users, controllers: { registrations: "registrations" }
     root 'pages#home', as: :unauthenticated #-> if user is not logged in
   end
 end
-
-
