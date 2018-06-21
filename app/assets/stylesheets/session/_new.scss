@@ -8,12 +8,16 @@ height: 500px;
 border-radius: 4px;
 align-items: stretch;
 border: solid 0.1px;
+
+h2 {
+  margin-left: 0%;
+}
 }
 
 .form-inputs {
   margin-top: 20px;
   width: 400px;
-  margin-left: 75px;
+  //margin-left: ;
 }
 
 #signup-option {
@@ -32,5 +36,5 @@ margin-bottom: 30px;
 }
 
 #password-request {
-margin-left: 190px;
+margin-left: 0%;
 }

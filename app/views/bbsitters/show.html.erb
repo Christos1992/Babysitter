@@ -33,9 +33,9 @@
 </div>
 
 <div id="link-edit">
-<%# if policy(@bbsitter).update? %>
+<%if policy(@bbsitter).update? %>
   <%= link_to 'Edit Your Profile', edit_bbsitter_path(@bbsitter) %>
-<%#end %>
+<%end %>
 </div>
 
 <div style = "height: 200px" >

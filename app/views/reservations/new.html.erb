@@ -1,8 +1,11 @@
 <h1>Make a new reservation</h1>
-<h4>Babysitter's name: <%=  @bbsitter.first_name %></h4>
-<h3>Parent's name: <%= @parent.first_name %></h3>
+<div class="reservation-box">
+<div id="info" class="card">
+<h4>Babysitter's name: <%=  @bbsitter.first_name%> <%= @bbsitter.last_name  %></h4>
+<h4>Parent's name: <%= @parent.first_name %>  <%= @parent.last_name %></h4>
+</div>
 
-
+<div id="bar" class="card">
 <%= simple_form_for [@bbsitter, @reservation] do |f| %>
 <div class="form-inputs">
 <%= f.input :reservation_date, as: :date %>
@@ -10,5 +13,12 @@
 <div class="form-actions"> <%= f.button :submit, "Make a reservation" %>
   </div>
 <% end %>
+
+</div>
+
+</div>
+
+<div style="height: 200px">
+</div>
 
 
