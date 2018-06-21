@@ -1,3 +1,4 @@
+
 <div style="height: 100px;">
 
 </div>
@@ -6,3 +7,44 @@
 <h3>Date: <%= @reservation.reservation_date %></h3>
 <h3>Babysitter's name: <%= @reservation.parent.last_name %></h3>
 </div>
+=======
+<h1>Reservation numerb</h1>
+<h2><%= @reservation.reservation_date %></h2>
+<h3><%= @reservation.parent.last_name %></h3>
+
+<% if !current_user.is_parent? %>
+  <%= simple_form_for(@reservation) do |f| %>
+  <%= f.input :status, label: "confirm the reservation" %>
+  <% end %>
+<% end %>
+
+
+<div class="row">
+    <div class="col-xs-12">
+      <h3>messages</h3>
+      <% if @reservation.messages.empty? %>
+        <p>Be the first to send a message</p>
+      <% else %>
+        <ul class="list-group">
+          <% @reservation.messages.each do |message| %>
+            <li>
+              <% if current_user.is_parent? %>
+              <%= current_user.parent.first_name %>
+              <%= message.content %>
+              <% else %>
+                <%= current_user.bbsitter.first_name %>
+              <%= message.content %>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <%= render "messages/new", reservation: @reservation, message: @message %>
+    </div>
+  </div>
+
+

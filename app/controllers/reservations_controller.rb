@@ -1,4 +1,5 @@
 class ReservationsController < ApplicationController
+
   before_action :find_id, only: [:show, :edit, :update, :destroy]
 
 
@@ -6,14 +7,13 @@ class ReservationsController < ApplicationController
   def new
     @reservation = Reservation.new
     @bbsitter = Bbsitter.find(params[:bbsitter_id])
-     @parent = current_user.parent
+    @parent = current_user.parent
     authorize @reservation
   end
 
   def create
      @reservation = Reservation.new(reservation_params)
      @reservation.bbsitter = Bbsitter.find(params[:bbsitter_id])
-
      @reservation.parent = Parent.find(current_user.parent.id)
     authorize @reservation
 
@@ -25,15 +25,12 @@ class ReservationsController < ApplicationController
   end
 
   def show
+    @message = Message.new
+
   end
 
   def index
-
-
     @reservations = policy_scope(Reservation)
-
-
-
   end
 
   def edit
