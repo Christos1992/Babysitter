@@ -11,6 +11,9 @@ class ParentPolicy < ApplicationPolicy
   def update?
     record.user == user
 
+  def show
+    true
+  end
 
   end
 

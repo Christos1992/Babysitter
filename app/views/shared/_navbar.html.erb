@@ -21,7 +21,7 @@
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <% if current_user.is_parent %>
-                <%= link_to bbsitter_path(current_user.parent) do %>
+                <%= link_to parent_path(current_user.parent) do %>
                   <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
                   <% end %>
               <% else %>
