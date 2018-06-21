@@ -5,6 +5,20 @@
 <div style= 'height:100px'></div>
 <style>.layer:after { content: "<%= @city %>";}</style>
 
+
+
+
+<div class="container">
+  <h1> <%= @city %> </h1>
+  <% if @bbsitters.nil? %>
+  <%= "Please go back and search for a city" %>
+  <% else %>
+   <%= form_with url: pages_path, method: :get, local: true do |form| %>
+      <%= form.hidden_field :city, value: @city%>
+      <%= form.text_field :query, placeholder: "Enter a name or ..." %>
+    <%= form.submit 'Search', id:"buttonhome" %>
+<% end %>
+
 <div class="container index">
   <div class="stage">
   <div class="layer"></div>
@@ -29,6 +43,7 @@
   <div class="layer"></div>
 </div>
   <h1> </h1>
+
    <div class="text-center">
   <div class="row">
     <% @bbsitters.each do |bbsitter| %>
@@ -62,6 +77,6 @@
   </div>
 </div>
 </div>
-
+<% end %>
 
 
