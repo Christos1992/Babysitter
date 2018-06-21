@@ -2,64 +2,80 @@
  height: 100%;
 }
 
-#profile-info {
-  background-color: rgba(255, 249, 192, 0.5);
-  background-color: rgba(255, 249, 192, 0.5);
-  display: center;
-  display-items: center;
-  margin-top: 20px;
-  vertical-align: middle;
-  background-color: rgba(255, 249, 192, 0.25);
-  width: 700px;
-  border-radius: 4px;
-  align-items: stretch;
-  border: solid 0.1px;
-
-
-}
-
 #photo {
   width: 400;       /* Set the width */
-  margin: 0 20%;
+
   padding: 10px;
+  margin-left: -450px;
+  margin-top: 25px;
 }
 
 #price {
   text-align: center;
 }
+#profile-info {
+  background-color: rgba(255, 249, 192, 0.5);
+  // display: center;
+  // display-items: center;
+  margin-top: -575px;
+  margin-left: 450px;
 
-#conditions {
-  margin-top: 10px;
-  background-color: rgba(255, 249, 192, 0.5);
-  background-color: rgba(255, 249, 192, 0.5);
-  display: center;
-  display-items: center;
-  margin-top: 20px;
-  vertical-align: middle;
-  background-color: rgba(255, 249, 192, 0.25);
-  //opacity: 0.8;
-  width: 700px;
-  height: 100px;
+  //background-color: rgba(255, 249, 192, 0.25);
+  width: 400px;
+  height: 150px;
   border-radius: 4px;
   align-items: stretch;
-  border: solid 0.1px;
-}
+  border-radius: 10px;
+  //border: solid 0.1px;
 
-#name-pic {
+
+}
+#conditions {
+  margin-left: 450px;
+  margin-top: 25px;
+  background-color: rgba(255, 249, 192, 0.5);
   background-color: rgba(255, 249, 192, 0.5);
   display: center;
   display-items: center;
+
+  vertical-align: middle;
+  //background-color: rgba(255, 249, 192, 0.25);
+  //opacity: 0.8;
+  width: 400px;
+  height: 125px;
+  border-radius: 4px;
+  align-items: stretch;
+  border-radius: 10px;
+  //border: solid 0.1px;
+}
+
+#profile-description {
+background-color: rgba(255, 249, 192, 0.5);
+width: 800px;
+height: 200px;
+margin-left: 50px;
+margin-top: 25px;
+border-radius: 10px;
+
+}
+#name-pic {
+  //background-color: rgba(255, 249, 192, 0.5);
+  // display: center;
+  // display-items: center;
+
   margin-top: 100px;
   vertical-align: middle;
-  background-color: rgba(255, 249, 192, 0.25);
+  background-color: rgba(255, 249, 192, 0.4);
   //opacity: 0.8;
-  width: 700px;
+  width: 900px;
   height: 600px;
-  border-radius: 4px;
-  border: solid 0.1px;
+  border-radius: 10px;
+
+  //border: solid 0.1px;
 
   h2 {
-    margin-left: 20px;
+    margin-left: -450px;
+    margin-top: -20px;
   }
 
 }
