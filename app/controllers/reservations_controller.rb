@@ -1,4 +1,5 @@
 class ReservationsController < ApplicationController
+
   before_action :find_id, only: [:show, :edit, :update, :destroy]
 
 

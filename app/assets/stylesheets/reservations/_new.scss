@@ -1,0 +1,56 @@
+.reservation-box {
+
+  display: flex;
+  flex-direction: column;
+  border: 0.1px solid;
+  //border-color: orange;
+  width: 620px;
+  height: 445px;
+  margin: 0 auto;
+  //justify-content: space-around;
+  align-items: center;
+  border-radius: 10px;
+}
+
+
+#info{
+  margin-top: 40px;
+align-items: left;
+background-color: #DCDCDC;
+ border: 0.1px solid orange;
+vertical-align: center;
+width: 540px;
+height: 150px;
+padding: 30px;
+//margin-left: 31%;
+//margin-top: 50px;
+
+h3 {
+  align-text: center;
+}
+}
+
+#bar{
+  margin-top: 40px;
+align-items: left;
+background-color: #DCDCDC;
+ border: 0.1px solid orange;
+vertical-align: center;
+width: 540px;
+height: 175px;
+padding: 15px;
+// margin-left: 31%;
+// margin-top: 50px;
+}
+
+.form-inputs {
+  margin-left: 10%;
+}
+
+h1 {
+  margin-top: 100px;
+}
+
+.reservation_reservation_date {
+  text-align: center;
+}
