@@ -2,7 +2,7 @@
 <div id="" class="container" align-items>
   <div class="col-xs-offset-1 col-xs-8 col-md-offset-1  col-md-8">
     <div id="name-pic" class="card">
-        <%= cl_image_tag @bbsitter.photo, height: 275, width: 275, crop: :fill, style:"border-radius:50%;", id: 'photo' %>
+        <%= cl_image_tag @bbsitter.photo, height: 260, width: 260, crop: :fill, style:"border-radius: 50%;", id: 'photo' %>
         <h2><%= @bbsitter.first_name %>'s Profile </h2>
     </div>
 
@@ -11,10 +11,12 @@
 
 
         <div id="profile-info" class="card">
+
         <h4>First name: <%= @bbsitter.first_name %></h4>
         <h4>Last name: <%= @bbsitter.last_name %></h4>
         <h4>Age: <%= @bbsitter.age %></h4>
         <h4>City: <%= @bbsitter.city %></h4>
+
         </div>
 
         <div id="conditions" class="card">
@@ -30,11 +32,12 @@
 
 </div>
 </div>
-<div class="card">
+
+<div style = "background-color: blue">
 <% if policy(@bbsitter).update? %>
   <%= link_to 'Edit Your Profile', edit_bbsitter_path(@bbsitter) %>
   <% end %>
-  </div>
+</div>
 
 <div style = "height: 200px" >
 </div>
