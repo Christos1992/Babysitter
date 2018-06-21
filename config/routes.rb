@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users, controllers: { registrations: "registrations" }
+
   resources :parents, only:[:edit, :show, :update, :destroy] do
     resources :reservations, only:[:show, :index]
   end
@@ -24,3 +25,4 @@ Rails.application.routes.draw do
     root 'pages#home', as: :unauthenticated #-> if user is not logged in
   end
 end
+
