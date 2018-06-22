@@ -1,21 +1,31 @@
 <h1>Welcome! Create your profil</h1>
 <%= simple_form_for(@parent) do |f| %>
 <%= f.error_notification %>
+<div class="update-box">
 
+<div class="card card-inputs">
 <div class="form-inputs">
 	<%= f.input :first_name, required: true %>
 	<%= f.input :last_name, required: true %>
 	<%= f.input :name_of_kid, required: true %>
 	<%= f.input :age_of_kid, required: true %>
 </div>
+</div>
 
-
+<div class="card card-button">
 <div class="form-actions">
 	<%= f.button :submit, "Update" %>
 </div>
 <% end %>
+</div>
+
+<div class="card card-link">
  <td>
    <% if policy(@parent).destroy? %>
      <%= link_to 'Delete your account', user_registration_path, method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
  </td>
+</div>
+ </div>
+ <div style="height: 100px;">
+  </div>

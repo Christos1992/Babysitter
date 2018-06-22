@@ -1,17 +1,27 @@
-<h1>Welcome <strong><%=@parent.first_name%></strong></h1>
+<h1><strong><%=@parent.first_name%>'s profile</strong></h1>
 
+<div class="parent-box">
+<div class="card card-parent">
 <ul>
-	<li><%=@parent.first_name%></li>
-	<li><%=@parent.last_name%></li>
-	<li><%=@parent.name_of_kid%></li>
-	<li><%=@parent.age_of_kid%></li>
+	<li><strong>Parent:</strong> <%=@parent.first_name%> <%=@parent.last_name%></li>
+	<li><strong>Kid's name:</strong> <%=@parent.name_of_kid%>, Age: <%=@parent.age_of_kid%></li>
+
 </ul>
+</div>
 
 
+<div class="card card-links">
 <% if policy(@parent).update? %>
-  <%= link_to 'Edit Your Profile', edit_parent_path(@parent) %>
+  <%= link_to 'Edit Your Profile', edit_parent_path(@parent), id: "edit" %> |
 <% end %>
 
 
+
   <%= link_to 'All your reservations', parent_reservations_path(@parent) %>
+</div>
+</div>
+
+<div style="height: 150px;">
+
+</div>
 
