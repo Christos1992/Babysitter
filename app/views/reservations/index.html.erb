@@ -1,26 +1,51 @@
-<h1>all reservation</h1>
+<h1>Your Reservations</h1>
 
 
 <div class="container">
-   <div class="text-center">
+ <div class="text-center">
   <div class="row">
     <% @reservations.each do |reservation| %>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="cards">
-           <div class= "card-language">
-            <h2> <%= reservation.id %></h2>
-            <% if current_user.is_parent? %>
-            <p><%= link_to "go to this reservation", parent_reservation_path(reservation.parent, reservation), class: 'card-link' %></p>
-            <% else %>
-            <p><%= link_to "go to this reservation", bbsitter_reservation_path(reservation.bbsitter,reservation), class: 'card-link' %></p>
-            <% end %>
-          </div>
 
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="cards-reservation" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path(reservation.bbsitter.photo.url) %>');">
+        <% if current_user.is_parent? %>
+        <div class="card-category-reservation">Reservation NR:  <%= reservation.id %></div>reservation
+        <div class="card-link-reservation"><%= link_to parent_reservation_path(reservation.parent, reservation)  do %> 
         </div>
 
-      </div>
-    <% end %>
-  </div>
-  </div>
+        <div class="card-description-reservation">
+         <h2><%= "Your Babysitter is  #{reservation.bbsitter.first_name} #{reservation.bbsitter.last_name}" %></h2>
+         <p><%= reservation.reservation_date.strftime('Next Babysit %d / %m / %y') %></p>
+         <% if reservation.status? %>
+         <p><%= "Confirmed" %></p>
+         <% else %>
+         <p><%= "Still Open" %></p>
+         <% end %>
+       </div>
+       <% end %>
+       <% else %>
+       <div class="card-category-reservation">Reservation NR:  <%= reservation.id %></div>
+       <div class="card-link-reservation">
+        <%= link_to bbsitter_reservation_path(reservation.bbsitter,reservation) do %>
+        <div class="card-description-reservation">
+         <h2><%= "Your sitting is for #{reservation.parent.first_name} #{reservation.parent.last_name}" %></h2>
+         <p><%= reservation.reservation_date.strftime('Next Babysit %d / %m / %y') %></p>
+         <% if reservation.status? %>
+         <p><%= "Confirmed" %></p>
+         <% else %>
+         <p><%= "Still Open" %></p>
+         <% end %>
+       </div>
+
+       <% end %>
+     </div>
+     <% end %>
+   </div>
+
+ </div>
+ <% end %>
 </div>
 </div>
+</div>
+</div>
+

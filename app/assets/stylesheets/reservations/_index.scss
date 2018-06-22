@@ -1,2 +1,17 @@
 @import 'new';
 @import 'show';
+
+.card-description-reservation h2 {
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-size: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  color: black;
+}
+.card-description-reservation p {
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-size: 19px;
+  text-align: center;
+  text-transform: uppercase;
+  color: black;
+}
