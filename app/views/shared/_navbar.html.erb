@@ -10,7 +10,11 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
+      <% if current_user.is_parent? %>
       <%= link_to "Reservations", parent_reservations_path(current_user.parent), class: "navbar-wagon-item navbar-wagon-link" %>
+      <% else %>
+      <%= link_to "Reservations", bbsitter_reservations_path(current_user.bbsitter), class: "navbar-wagon-item navbar-wagon-link" %>
+      <% end %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
@@ -50,13 +54,18 @@
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
-  
+
   <% if user_signed_in? %>
     <div class="navbar-wagon-item hidden-md hidden-lg">
       <div class="dropdown">
         <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+           <% if current_user.is_parent? %>
           <li><%= link_to "Reservations", parent_reservations_path(current_user.parent)%></li>
+          <% else %>
+          <li><%= link_to "Reservations", bbsitter_reservations_path(current_user.bbsitter)%></li>
+          <% end %>
+
         </ul>
       </div>
     </div>
