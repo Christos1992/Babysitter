@@ -1,0 +1,19 @@
+function refreshForm(formHTML) {
+  const currentForm = document.getElementById('new_message');
+  currentForm.innerHTML = formHTML;
+}
+
+function addMessage(newMessage) {
+  const messageList = document.getElementById('messages');
+  messageList.insertAdjacentHTML('beforeend', newMessage);
+}
+
+
+
+<% if @message.persisted? %>
+
+  addMessage('<%= j render "messages/show", message: @message %>')
+  refreshForm('<%= j render "messages/form", reservation: @reservation, message: Message.new %>');
+<% else %>
+  refreshForm('<%= j render "messages/form", reservation: @reservation, message: @message %>');
+<% end %>
