@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2018_06_21_145653) do
   end
 
   create_table "reservations", force: :cascade do |t|
-    t.string "reservation_date"
+    t.datetime "reservation_date"
     t.boolean "status", default: false
     t.bigint "parent_id"
     t.bigint "bbsitter_id"

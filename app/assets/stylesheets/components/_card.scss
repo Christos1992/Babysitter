@@ -140,9 +140,45 @@
 }
 
 .cards:hover {
-opacity: 1;
+  opacity: 1;
 }
 
 
+//--------Reservation Cards----------
+// .card-link-reservation a {
+//   width: 100%;
+//   height: 100%;
+//   position: absolute;
+// }
 
+.card-description-reservation {
+  position: absolute;
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-size: 10px;
+  bottom: 10px;
+  left: 10px;
+}
+
+.card-category-reservation {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.cards-reservation {
+
+  background-size: 300px 285px;
+  background-repeat: no-repeat;
+  margin-top:50px;
+  height: 350px;
+  width: 300px;
+  text-shadow: 3 3px 2px rgba(0,0,0,1);
+  background-color: white;
+  color: #999999;
+  position: relative;
+  border-radius:10px;
+  opacity: 0.9;
+  box-shadow: 1px 2px 4px -1px rgba(0, 0, 0, 0.7)
+}
 
