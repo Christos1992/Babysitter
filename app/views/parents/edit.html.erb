@@ -19,7 +19,7 @@
 <% end %>
 </div>
 
-<div class="card card-link">
+<div class="card cards-link">
  <td>
    <% if policy(@parent).destroy? %>
      <%= link_to 'Delete your account', user_registration_path, method: :delete, data: { confirm: 'Are you sure?' } %>

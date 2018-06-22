@@ -34,9 +34,10 @@
   align-items: stretch;
   border-radius: 10px;
   //border: solid 0.1px;
-  background-color: grey;
-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.4);
 
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.4);
+border: solid 0.01px;
+border-color: grey;
 
 
 }
@@ -62,6 +63,7 @@ box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.4);
   //border: solid 0.1px;
   border: solid 0.01px;
 border-color: grey;
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.4);
 
 }
 
@@ -76,6 +78,8 @@ margin-top: 25px;
 border-radius: 10px;
 border: solid 0.01px;
 border-color: grey;
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.4);
+
 
 }
 #name-pic {

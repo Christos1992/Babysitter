@@ -4,14 +4,14 @@
 </div>
 <div class="card-resnum">
 <h1>Reservation info:</h1>
-<h3>Date: <%= @reservation.reservation_date %></h3>
+<h3>Date: <%= @reservation.reservation_date.strftime(' %d / %m / %y') %></h3>
 <h3>Babysitter's name: <%= @reservation.bbsitter.last_name %></h3>
 </div>
 
 <div class="card chatbox">
-<h2><strong>Contact BBsitter</strong></h2>
-<h3> The Reservation date: <%= @reservation.reservation_date %></h3>
-<h3><%= @reservation.parent.last_name %></h3>
+<h2><strong>Contact The Babysitter</strong></h2>
+<h3> The Reservation date: <%= @reservation.reservation_date.strftime(' %d / %m / %y')%></h3>
+<h3> Your name: <%= @reservation.parent.last_name %></h3>
 
 <% if !current_user.is_parent? %>
   <%= simple_form_for(@reservation) do |f| %>
