@@ -1,0 +1,37 @@
+.update-box {
+  display: flex;
+  flex-direction: column;
+  border: 0.1px solid;
+  border-color: orange;
+  width: 520px;
+  height: 500px;
+  margin: 0 auto;
+  //justify-content: space-around;
+  align-items: center;
+  border-radius: 10px;
+  margin-top: 40px;
+  }
+
+  .card-inputs {
+    margin-top: 20px;
+    margin-left: -10%;
+
+  }
+
+  .btn {
+    background-color: green;
+    color: white;
+  }
+.card-link {
+
+align-items: left;
+//background-color: #DCDCDC;
+ //border: 0.1px solid orange;
+vertical-align: center;
+width: 300px;
+height: 100px;
+padding: 20px;
+margin-left: -40%;
+  margin-top: 250px;
+  font-size: 13px;
+}
