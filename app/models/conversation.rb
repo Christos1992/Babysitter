@@ -1,6 +1,6 @@
 class Conversation < ApplicationRecord
-belongs_to :parent, foreign_key => :parent_id, class_name: 'User'
-belongs_to :bbsitter, foreign_key => :bbsitter_id, class_name: 'User'
+belongs_to :parent, :foreign_key => :parent_id, class_name: 'User'
+belongs_to :bbsitter, :foreign_key => :bbsitter_id, class_name: 'User'
 has_many :messages, dependent: :destroy
 
 
