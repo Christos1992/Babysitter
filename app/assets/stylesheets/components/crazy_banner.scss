@@ -13,7 +13,7 @@ body {
 
 .stage {
   height: 700px;
-  width: 500px;
+  width: 590px;
   margin-left: 200px;
   margin-top:100px;
   position: absolute;
@@ -21,6 +21,11 @@ body {
   perspective: 9999px;
   transform-style: preserve-3d;
 }
+
+.searchbb {
+    margin-top: 200px;
+    z-index: 10000;
+    position: relative;}
 
 
 .layer {
@@ -82,4 +87,7 @@ $NUM_LAYERS: 20;
 @keyframes ಠ_ಠ {
   100% { transform: rotateY(-40deg) rotateX(-43deg); }
 }
+
+
+
 
