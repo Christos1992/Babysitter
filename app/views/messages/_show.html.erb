@@ -1,0 +1,8 @@
+<p>
+  <% if current_user.is_parent? %>
+  <%= "#{@reservation.parent.first_name}said at #{message.created_at.strftime('%m/%d, %H:%M')}:" %>
+  <% else %>
+  <%= "#{@reservation.bbsitter.first_name} said at  #{message.created_at.strftime('%m/%d, %H:%M')}:" %>
+  <% end %>
+  <%= message.content %></p>
+
