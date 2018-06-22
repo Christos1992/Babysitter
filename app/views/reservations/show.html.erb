@@ -7,9 +7,10 @@
 <h3>Date: <%= @reservation.reservation_date %></h3>
 <h3>Babysitter's name: <%= @reservation.bbsitter.last_name %></h3>
 </div>
-=======
-<h1>Reservation numerb</h1>
-<h2><%= @reservation.reservation_date %></h2>
+
+<div class="card chatbox">
+<h2><strong>Contact BBsitter</strong></h2>
+<h3> The Reservation date: <%= @reservation.reservation_date %></h3>
 <h3><%= @reservation.parent.last_name %></h3>
 
 <% if !current_user.is_parent? %>
@@ -21,7 +22,7 @@
 <div id="messages">
   <div class="row">
     <div class="col-xs-12">
-      <h3>messages</h3>
+      <h3>Messages:</h3>
       <% if @reservation.messages.empty? %>
         <p>Be the first to send a message</p>
       <% else %>
@@ -39,6 +40,9 @@
   <div class="row">
     <div class="col-xs-12">
       <%= render "messages/form", reservation: @reservation, message: @message %>
+    </div>
+  </div>
+  <div style="height: 50px;">
     </div>
   </div>
 
