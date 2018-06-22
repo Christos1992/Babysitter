@@ -5,7 +5,7 @@
 <div class="card-resnum">
 <h1>Reservation info:</h1>
 <h3>Date: <%= @reservation.reservation_date %></h3>
-<h3>Babysitter's name: <%= @reservation.parent.last_name %></h3>
+<h3>Babysitter's name: <%= @reservation.bbsitter.last_name %></h3>
 </div>
 =======
 <h1>Reservation numerb</h1>
@@ -18,8 +18,8 @@
   <% end %>
 <% end %>
 
-
-<div class="row">
+<div id="messages">
+  <div class="row">
     <div class="col-xs-12">
       <h3>messages</h3>
       <% if @reservation.messages.empty? %>
@@ -28,22 +28,17 @@
         <ul class="list-group">
           <% @reservation.messages.each do |message| %>
             <li>
-              <% if current_user.is_parent? %>
-              <%= current_user.parent.first_name %>
-              <%= message.content %>
-              <% else %>
-                <%= current_user.bbsitter.first_name %>
-              <%= message.content %>
-              <% end %>
+               <%= render 'messages/show', message: message %>
             </li>
           <% end %>
         </ul>
       <% end %>
     </div>
   </div>
+</div>
   <div class="row">
     <div class="col-xs-12">
-      <%= render "messages/new", reservation: @reservation, message: @message %>
+      <%= render "messages/form", reservation: @reservation, message: @message %>
     </div>
   </div>
 
