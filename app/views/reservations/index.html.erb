@@ -15,7 +15,7 @@
 
         <div class="card-description-reservation">
          <h2><%= "Your Babysitter is  #{reservation.bbsitter.first_name} #{reservation.bbsitter.last_name}" %></h2>
-         <p><%= reservation.reservation_date.strftime('Next Babysit %d / %m / %y') %></p>
+         <p><%= reservation.reservation_date %></p>
          <% if reservation.status? %>
          <p><%= "Confirmed" %></p>
          <% else %>
@@ -29,7 +29,7 @@
         <%= link_to bbsitter_reservation_path(reservation.bbsitter,reservation) do %>
         <div class="card-description-reservation">
          <h2><%= "Your sitting is for #{reservation.parent.first_name} #{reservation.parent.last_name}" %></h2>
-         <p><%= reservation.reservation_date.strftime('Next Babysit %d / %m / %y') %></p>
+         <p><%= reservation.reservation_date %></p>
          <% if reservation.status? %>
          <p><%= "Confirmed" %></p>
          <% else %>
